@@ -110,7 +110,7 @@ def submit_patient():
     return redirect('/')
 
 
-# صفحة إدخال التخصص
+
 @app.route('/submit_specialty', methods=['GET', 'POST'])
 def submit_specialty():
     if 'role' in session and session['role'] == 'doctor':
