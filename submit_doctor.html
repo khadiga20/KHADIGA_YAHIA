@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Submit Doctor Information</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='doctor_style.css') }}">
+</head>
+
+<body>
+    <header>
+        <img src="{{ url_for('static', filename='R.jpg') }}" alt="Clinic Logo" width="100">
+        <h1>DIGA CLINIC</h1>
+        <p>This is our clinic for helping pets, <b>welcome</b></p>
+        <nav>
+            <a href="/">Home</a>
+
+            <a href="/submit_doctor">Submit Doctor Information</a>
+            <a href="/submit_specialty">Submit Specialty</a><br>
+            <a href="/appointments">appointment</a><br>
+            <a href="/specialties">View Specialties </a>
+
+        </nav>
+    </header>
+
+    <main>
+        <section>
+            <h2>Doctor Information</h2>
+            <form action="/submit_doctor" method="POST">
+                <div class="form-group">
+                    <label for="name">Doctor's Name:</label>
+                    <input type="text" id="name" name="name" placeholder="Enter doctor's name" required>
+                </div>
+                <div class="form-group">
+                    <label for="phone">Phone Number:</label>
+                    <input type="text" id="phone" name="phone" placeholder="Enter phone number" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" placeholder="Enter email address" required>
+                </div>
+                <div class="form-group">
+                    <label for="specialty_id">Specialty ID:</label>
+                    <input type="number" id="specialty_id" name="specialty_id" placeholder="Enter specialty ID"
+                        required>
+                </div>
+                <div class="form-group">
+                    <label for="price">Consultation Price:</label>
+                    <input type="number" id="price" name="price" placeholder="Enter consultation price" required>
+                </div>
+                <div class="form-group">
+                    <label>Gender:</label>
+                    <input type="radio" id="male" name="gender" value="male" required> Male
+                    <input type="radio" id="female" name="gender" value="female" required> Female
+                </div>
+                <div class="form-actions">
+                    <input type="submit" value="Submit">
+                    <input type="reset" value="Reset">
+                </div>
+            </form>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 DIGA Clinic. All rights reserved.</p>
+    </footer>
+</body>
+
+</html>

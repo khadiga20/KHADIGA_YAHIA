@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="Submit patient information to DIGA CLINIC">
+    <title>Submit Patient Information</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='main.css') }}">
+</head>
+
+<body>
+    <header>
+        <img src="{{ url_for('static', filename='R.jpg') }}" width="100px">
+        <h1>DIGA CLINIC</h1>
+        <nav>
+            <a href="/">Home</a>
+            <a href="/submit_patient">Submit Patient</a>
+
+
+            <a href="/specialties_and_doctors">View Specialties and Doctors</a>
+        </nav>
+    </header>
+
+    <main>
+        <h2>Submit Patient Information</h2>
+        <form action="/submit_patient" method="POST">
+            <label for="owner_name">Owner Name:</label>
+            <input type="text" id="owner_name" name="owner_name" required><br><br>
+
+            <label for="owner_phone">Owner Phone Number:</label>
+            <input type="text" id="owner_phone" name="owner_phone" required><br><br>
+
+            <label for="owner_email">Owner Email:</label>
+            <input type="email" id="owner_email" name="owner_email" required><br><br>
+
+            <label for="anim_name">Animal Name:</label>
+            <input type="text" id="anim_name" name="anim_name" required><br><br>
+
+            <label for="anim_type">Animal Type:</label>
+            <input list="animals" name="anim_type" id="anim_type">
+            <datalist id="animals">
+                <option value="Cat">
+                <option value="Dog">
+                <option value="Rabbit">
+                <option value="Mouse">
+            </datalist><br><br>
+
+            <label for="anim_age">Animal Age:</label>
+            <input type="number" id="anim_age" name="anim_age" required><br><br>
+
+            <label for="anim_problem">Problem Description:</label>
+            <textarea id="anim_problem" name="anim_problem" rows="4" required></textarea><br><br>
+
+            <label for="anim_gendar">Animal Gender:</label>
+            <input type="radio" name="anim_gendar" value="Male" required> Male
+            <input type="radio" name="anim_gendar" value="Female" required> Female<br><br>
+
+            <label for="doctor_id">Doctor ID:</label>
+            <input type="number" id="doctor_id" name="doctor_id" required><br><br>
+            <!-- New Date and Time Fields -->
+            <label for="appointment_date">Appointment Date:</label>
+            <input type="date" id="appointment_date" name="appointment_date" required><br><br>
+
+            <label for="appointment_time">Appointment Time:</label>
+            <input type="time" id="appointment_time" name="appointment_time" required><br><br>
+
+            <input type="submit" value="Submit">
+            <input type="reset" value="Reset">
+        </form>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 DIGA CLINIC. All rights reserved.</p>
+    </footer>
+</body>
+
+</html>

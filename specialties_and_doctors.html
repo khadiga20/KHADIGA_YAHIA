@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Specialties and Doctors</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+    <header>
+        <img src="{{ url_for('static', filename='R.jpg') }}" alt="Clinic Logo" width="100">
+        <h1>DIGA CLINIC</h1>
+        <p>Welcome to our clinic for helping pets!</p>
+        <nav>
+            <a href="/">Home</a>
+            <a href="/submit_patient">Submit Patient</a>
+            <a href="/specialties_and_doctors">View Specialties and Doctors</a>
+
+        </nav>
+    </header>
+
+    <h1>Specialties and Doctors</h1>
+    <table border="1">
+        <thead>
+            <tr>
+                <th>Specialty ID</th>
+                <th>Specialty Name</th>
+                <th>Doctor ID</th>
+                <th>Doctor Name</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for row in results %}
+            <tr>
+                <td>{{ row.specialty_id }}</td>
+                <td>{{ row.specialty_name }}</td>
+                <td>{{ row.doctor_id }}</td>
+                <td>{{ row.doctor_name }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</body>
+
+</html>

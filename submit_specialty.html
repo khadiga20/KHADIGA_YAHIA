@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Submit Information</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='doctor_style.css') }}">
+</head>
+
+
+<body>
+    <header>
+        <img src="{{ url_for('static', filename='R.jpg') }}" alt="Clinic Logo" width="100">
+        <h1>DIGA CLINIC</h1>
+        <p>This is our clinic for help pets, <b>welcome</b></p>
+        <nav>
+            <a href="/">Home</a>
+
+            <a href="/submit_doctor">Doctor Page</a>
+            <a href="/submit_specialty">Submit Specialty</a><br>
+            <a href="/appointments">appointment</a><br>
+            <a href="/specialties">View Specialties </a>
+
+        </nav>
+
+    </header>
+    <main>
+        <section>
+            <h2>Submit Your Specialty</h2>
+            <!-- You can add your form here -->
+            <form action="/submit_specialty" method="POST">
+                <input type="text" name="spe_name" placeholder="Specialty Name" required>
+                <input type="submit" value="Submit">
+            </form>
+
+
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2024 DIGA Clinic. All rights reserved.</p>
+    </footer>
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+
+</html>

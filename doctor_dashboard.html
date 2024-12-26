@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Doctor Dashboard</title>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='doctor_style.css') }}">
+</head>
+
+
+<body>
+
+    <header>
+        <img src="{{ url_for('static', filename='R.jpg') }}" alt="Clinic Logo" width="100">
+        <h1>DIGA CLINIC</h1>
+        <p>This is our clinic for helping pets, <b>welcome</b></p>
+        <nav>
+            <a href="/">Home</a>
+
+        </nav>
+    </header>
+
+    <body>
+
+        <h1>Doctor Dashboard</h1>
+
+
+        <main>
+            <nav class="doctor-dashboard-nav">
+                <a href="/submit_doctor">Submit Doctor Information</a><br>
+                <a href="/submit_specialty">Submit Specialty</a><br>
+                <a href="/appointments">appointment</a><br>
+                <a href="/specialties">View Specialties </a>
+            </nav>
+
+        </main>
+
+        <footer>
+            <p>&copy; 2024 DIGA Clinic. All rights reserved.</p>
+        </footer>
+    </body>
+
+</html>
